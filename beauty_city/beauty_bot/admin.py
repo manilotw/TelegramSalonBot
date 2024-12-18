@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Services, Specialist, Clients, TimeSlot, Schedule
+from .models import Services, Specialist, Clients, TimeSlot, Schedule, Salones
 
 
 class ServicesAdmin(admin.ModelAdmin):
@@ -23,8 +23,13 @@ class ScheduleAdmin(admin.ModelAdmin):
     list_display = ('specialist', 'client', 'service', 'time_slot')
 
 
+class SalonesAdmin(admin.ModelAdmin):
+    list_display = ('name', 'addres', 'phone_number')
+
+
 admin.site.register(Services, ServicesAdmin)
 admin.site.register(Specialist, SpecialistAdmin)
 admin.site.register(Clients, ClientsAdmin)
 admin.site.register(TimeSlot, TimeSlotAdmin)
 admin.site.register(Schedule, ScheduleAdmin)
+admin.site.register(Salones, SalonesAdmin)
